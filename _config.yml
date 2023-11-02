@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: 192424
 subtitle: ''
 description: ''
 keywords:
@@ -40,7 +40,10 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
+marked:
+  prependRoot: true
+  postAsset: true
 relative_link: false
 future: true
 highlight:
@@ -102,4 +105,22 @@ theme: landscape
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repository: https://github.com/qaq192424/192424.github.io.git
+  branch: master
+
+math:
+  engine: 'mathjax'
+  mathjax:
+    src: custom_mathjax_source
+    config:
+      # MathJax config
+
+pandoc:
+  extensions:
+    - -implicit_figures 
+    - +gfm_auto_identifiers+angle_brackets_escapable # Not available in pandoc 1.16
+    - +pipe_tables+raw_html+fenced_code_blocks
+    - -ascii_identifiers+backtick_code_blocks+autolink_bare_uris
+    - +intraword_underscores+strikeout+hard_line_breaks+emoji
+    - +shortcut_reference_links
